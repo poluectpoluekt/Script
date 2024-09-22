@@ -1,0 +1,13 @@
+SELECT
+    p.sysId AS personSysId,
+    p.familyName,
+    p.givenName,
+    p.middleName,
+    p.birthDate,
+    d.contactRelationship AS relationship
+FROM
+    HPPersonGeneric p
+INNER JOIN
+    HPPersonDependant d ON p.sysId = d.HPPersonGenericSysId
+WHERE
+    p.personId = 'test';
